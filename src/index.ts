@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import 'dotenv/config';
 import expressLogger from './utils/logger';
+import { default as authRouter } from './routes/auth';
 
 import mongooseConnection from './utils/mongoose';
 console.log('Mongoose state:', mongooseConnection.connection.readyState);
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(expressLogger);
+app.use(authRouter);
 
 app.get('/', (req: Request, res: Response) => {
 	res.send('Hello World');
