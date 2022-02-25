@@ -4,8 +4,6 @@ import User from '../models/users';
 import { compareHash, hash } from '../utils/bcrypt';
 import { generateToken } from '../utils/jwt';
 
-
-
 const router = express.Router();
 
 const validateUser = (body: any) => {
