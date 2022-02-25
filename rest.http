@@ -1,0 +1,42 @@
+GET http://localhost:3000/ HTTP/1.1
+
+###
+
+POST http://localhost:3000/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "String@mail.com",
+    "password": "String323",
+    "firstName": "First",
+    "lastName": "Last",
+    "birthDate": "01-11-1991"
+}
+
+###
+
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "String@mail.com",
+    "password": "String323"
+    //"password": "String32223"
+}
+
+###
+
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "doesntExist@mail.com",
+    "password": "String323"
+}
+
+###
+
+GET http://localhost:3000/profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ0BtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkZpcnN0IiwibGFzdE5hbWUiOiJMYXN0IiwiYmlydGhEYXRlIjoiMTk5MS0wMS0xMFQyMTowMDowMC4wMDBaIiwiaWF0IjoxNjQ1ODA0NDg5LCJleHAiOjE2NDU4OTA4ODl9.6u6BRL2U_52h01OFESB2zq9DN81RL6NIdA5ygWZUp4E
+
