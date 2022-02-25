@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import Joi from 'joi';
 import { checkToken } from '../middlewares/checkAuth';
+import { signInLimiter } from '../middlewares/rateLimiter';
 import User from '../models/users';
 import { compareHash, hash } from '../utils/bcrypt';
 import { generateToken } from '../utils/jwt';
@@ -65,13 +66,11 @@ router
 
 router
     .route('/login')
-    .post(async (req: Request, res: Response) => {
+    .post(signInLimiter, async (req: Request, res: Response) => {
         if (!req.body) {
             return res.status(400).json({
                 status: 'failed',
-                errors: [
-                    'Data is required'
-                ]
+                errors: [ 'Data is required' ]
             });
         }
         const { error } = validateLogin(req.body);
@@ -86,7 +85,7 @@ router
         if (!user) return res.status(404).json({ status: 'not found' });
         
         const hashMatch = await compareHash(req.body.password, user.password);
-        if (!hashMatch) return res.status(400).json({ status: 'wrong password' });
+        if (!hashMatch) return res.status(401).json({ status: 'wrong password' });
 
         user.lastLogin = new Date();
         await user.save();

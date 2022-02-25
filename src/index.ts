@@ -4,6 +4,7 @@ import expressLogger from './utils/logger';
 import { default as authRouter } from './routes/auth';
 import { default as profileRouter } from './routes/profile';
 import { default as adminRouter } from './routes/admin';
+import { generalLimiter } from './middlewares/rateLimiter';
 
 import mongooseConnection from './utils/mongoose';
 console.log('Mongoose state:', mongooseConnection.connection.readyState);
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(express.json());
 app.use(expressLogger);
+app.use(generalLimiter);
 app.use(authRouter);
 app.use(profileRouter);
 app.use(adminRouter);
@@ -29,3 +31,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Servers started on http://localhost:${port}`));
+
+export default app;
