@@ -84,13 +84,16 @@ router
         const user = await User.findOne({ email: req.body.email });
 
         if (!user) return res.status(404).json({ status: 'not found' });
-
+        
         const hashMatch = await compareHash(req.body.password, user.password);
         if (!hashMatch) return res.status(400).json({ status: 'wrong password' });
 
+        user.lastLogin = new Date();
+        await user.save();
+
         const userJson = user.toJSON();
         const token = generateToken(userJson);
-        return res.json({ message: 'success', user: userJson, token});
+        return res.json({ message: 'success', user: userJson, token });
     });
 
 router

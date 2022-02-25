@@ -19,7 +19,8 @@ const userSchema = new Schema({
                 delete ret.__v;
                 delete ret.password;
             }
-        }
+        },
+        timestamps: true
     }
 );
 
