@@ -8,6 +8,11 @@ console.log('Mongoose state:', mongooseConnection.connection.readyState);
 const random = randomNumber();
 const password = randomNumber();
 
+/**
+ * Creates admin user with test data.
+ * Logs the user email/password in console.
+ * @returns void
+ */
 const createAdminUser = async () => {
 
     const passwordHash = await hash(`${password}`);
