@@ -1,14 +1,9 @@
 import User from '../models/users';
 import { hash } from '../utils/bcrypt';
+import { randomNumber } from '../utils/helpers';
 import mongooseConnection from '../utils/mongoose';
 
 console.log('Mongoose state:', mongooseConnection.connection.readyState);
-
-const randomNumber = (min: number = 0, max: number = Date.now()): number => {
-    return Math.floor(
-        Math.random() * (max - min + 1) + min
-    )
-}
 
 const random = randomNumber();
 const password = randomNumber();
