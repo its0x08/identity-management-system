@@ -1,6 +1,6 @@
 GET http://localhost:3000/ HTTP/1.1
 
-###
+### Register User
 
 POST http://localhost:3000/register HTTP/1.1
 Content-Type: application/json
@@ -13,7 +13,7 @@ Content-Type: application/json
     "birthDate": "01-11-1991"
 }
 
-###
+### Login User
 
 POST http://localhost:3000/login HTTP/1.1
 Content-Type: application/json
@@ -24,7 +24,7 @@ Content-Type: application/json
     //"password": "String32223"
 }
 
-###
+### Login Inexistent User
 
 POST http://localhost:3000/login HTTP/1.1
 Content-Type: application/json
@@ -34,9 +34,21 @@ Content-Type: application/json
     "password": "String323"
 }
 
-###
+### Get User Profile
 
 GET http://localhost:3000/profile HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ0BtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkZpcnN0IiwibGFzdE5hbWUiOiJMYXN0IiwiYmlydGhEYXRlIjoiMTk5MS0wMS0xMFQyMTowMDowMC4wMDBaIiwiaWF0IjoxNjQ1ODA0NDg5LCJleHAiOjE2NDU4OTA4ODl9.6u6BRL2U_52h01OFESB2zq9DN81RL6NIdA5ygWZUp4E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ0BtYWlsLmNvbSIsImZpcnN0TmFtZSI6IlRlc3RBIiwibGFzdE5hbWUiOiJVc2VyIiwiYmlydGhEYXRlIjoiMTk5Mi0wMi0xMVQyMTowMDowMC4wMDBaIiwiaWF0IjoxNjQ1ODA5ODYzLCJleHAiOjE2NDU4OTYyNjN9.FdXlDzOz0ETlWxYQwnsFiqIdr6GLpz_4mHluDEc-GFI
 
+
+### Update User Profile
+
+PUT http://localhost:3000/profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ0BtYWlsLmNvbSIsImZpcnN0TmFtZSI6IlRlc3RBIiwibGFzdE5hbWUiOiJVc2VyIiwiYmlydGhEYXRlIjoiMTk5Mi0wMi0xMVQyMTowMDowMC4wMDBaIiwiaWF0IjoxNjQ1ODA5ODYzLCJleHAiOjE2NDU4OTYyNjN9.FdXlDzOz0ETlWxYQwnsFiqIdr6GLpz_4mHluDEc-GFI
+
+{
+    "firstName": "TestAA",
+    "lastName": "User",
+    "birthDate": "02-12-1992"
+}
