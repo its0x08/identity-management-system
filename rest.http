@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "email": "String@mail.com",
-    "password": "String323"
+    "password": "String323",
     //"password": "String32223"
 }
 
@@ -33,6 +33,16 @@ Content-Type: application/json
 {
     "email": "doesntExist@mail.com",
     "password": "String323"
+}
+
+### Login Admin User (Get Credentials from script)
+
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "admin_1378607834355@gmail.com",
+    "password": "530353413043"
 }
 
 ### Logout

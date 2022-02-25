@@ -8,6 +8,7 @@ const userSchema = new Schema({
     firstName: String,
     lastName: String,
     birthDate: Date,
+    isAdmin: { type: Boolean, default: false },
     lastLogin: Date,
     createdAt: Date,
     updatedAt: Date,
