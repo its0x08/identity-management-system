@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import Joi from 'joi';
+import { checkToken } from '../middlewares/checkAuth';
 import User from '../models/users';
 import { compareHash, hash } from '../utils/bcrypt';
 import { generateToken } from '../utils/jwt';
@@ -91,5 +92,11 @@ router
         const token = generateToken(userJson);
         return res.json({ message: 'success', user: userJson, token});
     });
+
+router
+    .route('/logout')
+    .get(checkToken, (req: Request, res: Response)=>{
+        return res.json({status: 'logged out'})
+    })
 
 export default router;

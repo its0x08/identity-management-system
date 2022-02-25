@@ -24,6 +24,7 @@ Content-Type: application/json
     //"password": "String32223"
 }
 
+
 ### Login Inexistent User
 
 POST http://localhost:3000/login HTTP/1.1
@@ -33,6 +34,10 @@ Content-Type: application/json
     "email": "doesntExist@mail.com",
     "password": "String323"
 }
+
+### Logout
+GET http://localhost:3000/logout HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ0BtYWlsLmNvbSIsImZpcnN0TmFtZSI6IlRlc3RBIiwibGFzdE5hbWUiOiJVc2VyIiwiYmlydGhEYXRlIjoiMTk5Mi0wMi0xMVQyMTowMDowMC4wMDBaIiwiaWF0IjoxNjQ1ODA5ODYzLCJleHAiOjE2NDU4OTYyNjN9.FdXlDzOz0ETlWxYQwnsFiqIdr6GLpz_4mHluDEc-GFI
 
 ### Get User Profile
 
@@ -52,3 +57,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN0cmluZ
     "lastName": "User",
     "birthDate": "02-12-1992"
 }
+
