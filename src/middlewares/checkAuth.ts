@@ -7,7 +7,6 @@ export const checkToken = (req: Request, res: Response, next: NextFunction) => {
     if (!token) {
         return res.status(401).json({ status: 'unauthorized'});
     }
-    // "Bearer ABCKOSADJLKSDJLAKSDJAKLSD"
     const onlyToken = token.replace('Bearer ', '');
     try {
         const user: any = verifyToken(onlyToken);
