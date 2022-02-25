@@ -3,6 +3,7 @@ import 'dotenv/config';
 import expressLogger from './utils/logger';
 import { default as authRouter } from './routes/auth';
 import { default as profileRouter } from './routes/profile';
+import { default as adminRouter } from './routes/admin';
 
 import mongooseConnection from './utils/mongoose';
 console.log('Mongoose state:', mongooseConnection.connection.readyState);
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(expressLogger);
 app.use(authRouter);
 app.use(profileRouter);
+app.use(adminRouter);
 
 app.get('/', (req: Request, res: Response) => {
 	res.send('Hello World');
