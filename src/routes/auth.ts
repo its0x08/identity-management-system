@@ -47,6 +47,7 @@ router
         user.password = await hash(user.password);
         try {
             await user.save();
+            return res.json({ message: 'created', errors: [] });
         } catch (error: any) {
             if (error.code === 11000) {
                 return res.status(400).json({
@@ -58,7 +59,6 @@ router
                 status: 'failed'
             });
         }
-        res.json({ message: 'created', errors: [] });
     });
 
 
