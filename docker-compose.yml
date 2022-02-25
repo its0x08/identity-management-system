@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  mongo:
+    image: mongo
+    ports:
+      - 27018:27017
+    healthcheck:
+      test: ["CMD", "bash", "/mongo-healthcheck"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
