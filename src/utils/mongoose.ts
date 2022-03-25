@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27018/climedo';
+const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27018/ims';
 let mongooseConnection = new mongoose.Mongoose();
 
 const connectMongo = async () => {
