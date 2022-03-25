@@ -41,7 +41,3 @@ npm test
 ```
 
 Server will be running on [http://localhost:3000/](http://localhost:3000/)
-
-* __Name__: `Kristi Begaj`
-* __Email__: `its0x08@gmail.com`
-* __Position__: `Backend Engineer (f/m/x)`
