@@ -1,7 +1,7 @@
 {
-  "name": "climedo",
+  "name": "",
   "version": "0.0.1",
-  "description": "Climedo task (backend)",
+  "description": "task (backend)",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --testTimeout=10000 --forceExit",
