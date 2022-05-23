@@ -1,5 +1,7 @@
 # Identity Management System
 
+[![Semgrep](https://github.com/its0x08/identity-management-system/actions/workflows/semgrep.yml/badge.svg)](https://github.com/its0x08/identity-management-system/actions/workflows/semgrep.yml)
+
 ## Requirements
 
 1. NodeJS (>=v14)
