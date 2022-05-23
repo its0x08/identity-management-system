@@ -1,6 +1,7 @@
 # Identity Management System
 
 [![Semgrep](https://github.com/its0x08/identity-management-system/actions/workflows/semgrep.yml/badge.svg)](https://github.com/its0x08/identity-management-system/actions/workflows/semgrep.yml)
+[![CodeQL](https://github.com/its0x08/identity-management-system/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/its0x08/identity-management-system/actions/workflows/codeql-analysis.yml)
 
 ## Requirements
 
