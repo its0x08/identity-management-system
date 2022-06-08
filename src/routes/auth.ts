@@ -80,6 +80,8 @@ router
                 errors: error.details.map(e => e.message)
             });
         }
+        const re = /^[\w\.@\d]{5,}$$/;
+        if(!re.test(req.body.email)) return res.status(401).json({ status: 'wrong input' });
         const user = await User.findOne({ email: req.body.email });
 
         if (!user) return res.status(404).json({ status: 'not found' });
