@@ -19,7 +19,7 @@
     "@types/winston": "^2.4.4",
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+    "express": "^4.19.2",
     "express-rate-limit": "^6.3.0",
     "express-winston": "^4.2.0",
     "joi": "^17.6.0",
